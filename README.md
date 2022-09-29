@@ -15,7 +15,7 @@
     - We will also use the [Flask](https://flask.palletsprojects.com/en/2.0.x/) library to create a simple web application to serve the network through a REST API
     - We will also see a visualization library that can be used purely with python, namely [streamlit](https://streamlit.io/)
     - You will be able to see how easy it is to create a web interface for your data science project with streamlit
-    - Unit tests are also included in the repository, you can run them with `pytest` or `python -m pytest`
+    - Unit tests are also included in the repository, you can run them with `python -m pytest`
 - Our main idea with this exercise was to show how to implement a data science project in a structured way, not just only use jupyter notebooks. In this project we will only use jupyter for demonstration purposes.
 - You will need a IDE to work on this project, you can use [PyCharm](https://www.jetbrains.com/pycharm/), [VSCode](https://code.visualstudio.com/) or even a simple [vim](https://www.vim.org/) setup (but you can use any other IDE you like).
 
@@ -178,5 +178,5 @@ When calculating the shortest path you don't need to take the edge weights into 
 ### Tests
 If you completed the tasks correctly, you should be able to run the tests without errors with the following command:
 ```bash
-pytest
+python -m pytest
 ```
