@@ -1,0 +1,10 @@
+graph sample2 {
+rankdir=LR;
+sansa [label="Sansa Stark", color=red, fontcolor=red];
+arya [label="Arya Stark", color=red, fontcolor=red];
+robb [label="Robb Stark", color=red, fontcolor=red];
+jon [label="Jon Snow", color=red, fontcolor=red];
+sansa -- arya [label="4", color=red];
+arya -- robb [label="3", color=red];
+robb -- jon [label="1", color=red];
+}

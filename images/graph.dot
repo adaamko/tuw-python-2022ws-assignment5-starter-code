@@ -1,0 +1,21 @@
+graph sample2 {
+sansa [label="Sansa Stark", color=red, fontcolor=red];
+arya [label="Arya Stark", color=red, fontcolor=red];
+robb [label="Robb Stark", color=red, fontcolor=red];
+joffrey [label="Joffrey Baratheon"];
+jon [label="Jon Snow", color=red, fontcolor=red];
+eddard [label="Eddard Stark"];
+catelyn [label="Catelyn Stark"];
+robert [label="Robert Baratheon"];
+hound [label="The Hound"];
+sansa -- arya [label="4", color=red];
+arya -- robb [label="3", color=red];
+robb -- joffrey [label="2"];
+robb -- jon [label="1", color=red];
+sansa -- eddard [label="1"];
+eddard -- catelyn [label="2"];
+eddard -- arya  [label="1"];
+eddard -- robert [label="1"];
+robert -- hound [label="1"];
+hound -- jon [label="1"];
+}
