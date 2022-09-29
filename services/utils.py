@@ -1,6 +1,6 @@
-from streamlit_agraph import agraph, Node, Edge, Config
-import streamlit as st
 import networkx as nx
+import streamlit as st
+from streamlit_agraph import Config, Edge, Node, agraph
 
 
 class UpdatedConfig(Config):

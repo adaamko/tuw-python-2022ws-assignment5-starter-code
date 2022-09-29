@@ -1,8 +1,9 @@
-import re
 import json
-from typing import Iterable, Tuple
-import networkx as nx
+import re
 from collections import defaultdict
+from typing import Iterable, Tuple
+
+import networkx as nx
 from more_itertools import pairwise
 from tqdm import tqdm
 
@@ -53,6 +54,9 @@ class KnowledgeGraph:
         # We will use regular expressions to recognize mentions of the characters.
         # We compile the regular expressions for the characters, the first names and the aliases.
         # We do this to speed up the recognition of mentions of the characters. (Only need to compile the regex once)
+        self.characters_regex = {}
+        self.character_first_names_regex = {}
+        self.character_aliases_regex = {}
         self.compile_characters_regex()
 
         # If the serialized knowledge graph is present, we deserialize it.
@@ -121,12 +125,10 @@ class KnowledgeGraph:
 
         # For each character we compile a regular expression that matches the character name.
         # We build a dictionary where the keys are the characters and the values are the compiled regular expressions.
-        self.characters_regex = {}
         for character in self.characters:
             self.characters_regex[character] = re.compile(r"\b" + character + r"\b")
 
         # For each first name we compile a regular expression that matches the first name.
-        self.character_first_names_regex = {}
         for first_name in self.character_first_names:
             self.character_first_names_regex[first_name] = re.compile(
                 r"\b" + first_name + r"\b"
@@ -135,7 +137,6 @@ class KnowledgeGraph:
         # For each alias we compile a regular expression that matches the alias.
         # This is a little more complicated, because we want to match all the aliases.
         # For this we build a big regular expression that matches all the aliases.
-        self.character_aliases_regex = {}
         for character in self.character_aliases:
             character_aliases_regex = ""
             for alias in self.character_aliases[character]:

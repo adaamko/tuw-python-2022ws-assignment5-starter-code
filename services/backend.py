@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
-from pynlp5.knowledge_graph import KnowledgeGraph
 import networkx as nx
-from pynlp5.constants import *
+from flask import Flask, jsonify, request
+from pynlp5.constants import ALIAS_PATH, CHARACTER_PATH, TEXT_PATH
+from pynlp5.knowledge_graph import KnowledgeGraph
 
 kg = None
 
@@ -65,7 +65,7 @@ def kg_neighbors():
 
     subgraph = nx.cytoscape_data(neighbors)
 
-    print("Returning subraph...")
+    print("Returning subgraph...")
     print(neighbors.nodes)
 
     return jsonify(subgraph)
@@ -99,14 +99,14 @@ def shortest_path():
     character1 = request.args.get("character1")
     character2 = request.args.get("character2")
 
-    shortest_path, sum_of_path = kg.shortest_path_between_characters(
+    sp, sum_of_path = kg.shortest_path_between_characters(
         character1, character2
     )
 
-    subgraph = nx.cytoscape_data(shortest_path)
+    subgraph = nx.cytoscape_data(sp)
 
     print("Returning shortest path")
-    print(shortest_path.nodes)
+    print(sp.nodes)
 
     return jsonify({"shortest_path": subgraph, "sum_of_path_weights": sum_of_path})
 

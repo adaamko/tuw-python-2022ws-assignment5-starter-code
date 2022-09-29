@@ -1,14 +1,12 @@
-import streamlit as st
 import argparse
-import requests
 import os
-from utils import (
-    init_session_states,
-    json_to_networkx,
-    convert_networkx_to_agraph,
-)
+
+import requests
+import streamlit as st
 from pynlp5.constants import SERIALIZED_PATH
 
+from utils import (convert_networkx_to_agraph, init_session_states,
+                   json_to_networkx)
 
 # ===============================================================================
 # Functions for querying the backend flask based API
