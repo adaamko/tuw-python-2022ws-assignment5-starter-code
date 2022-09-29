@@ -49,6 +49,12 @@ Install `pytest` library for code linting:
 pip install pytest
 ```
 
+If needed, install `jupyter`:
+```bash
+pip install ipykernel
+pip install jupyter
+```
+
 ## The architecture of the repository
 
 ![Architecture](images/architecture.png)
@@ -146,7 +152,7 @@ streamlit run frontend.py -- -kg ../data/serialized_kg.json
 
 To complete this exercise and get the extra +15 point you are expected to complete two tasks:
 
-### Task 1 (5 points)
+### Task 1 (7 points)
 #### Finding isolated characters in the knowledge graph
 In this task you will need to find all the characters that are not connected to any other character in the knowledge graph. You can find the code for the `KnowledgeGraph` class in the `pynlp5/knowledge_graph.py` file.
 
@@ -156,7 +162,7 @@ This function has no arguments and should return a list of strings (character na
 
 HINT: browse the algorithms in networkx: https://networkx.org/documentation/stable/reference/algorithms/index.html
 
-### Task 2 (10 points)
+### Task 2 (8 points)
 #### Finding the shortest path between two characters in the knowledge graph
 
 In this task you will need to find the shortest path between two characters in the knowledge graph. You can find the code for the `KnowledgeGraph` class in the `pynlp5/knowledge_graph.py` file.
